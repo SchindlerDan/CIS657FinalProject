@@ -25,7 +25,6 @@ const Login = ({route, navigation}) => {
         const [picture, setPicture] = useState('');
       
         const FBResponse = (response) =>{
-          console.log('fb response: ',response);
           setData(response);
           setPicture(response.picture.data.url);
           if(response.accessToken){
@@ -54,5 +53,11 @@ const Login = ({route, navigation}) => {
 
 }
 
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+  },
 
+
+});
 export default Login;

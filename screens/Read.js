@@ -42,15 +42,13 @@ import {
             <Image style={styles.userImage}source={{ uri: entry.picture.uri }}/>
              
              <View style={styles.textContainer}>
-               <Text>{entry.name}</Text>
-             <Text>{entry.title}</Text>
+               <Text style={styles.name}>{entry.name}</Text>
+             <Text style={styles.title}>{entry.title}</Text>
             <Text>{entry.date}</Text>
-            <Text>{ entry.weather? entry.weather.main.temp +  "F": "Unknown Temperature Conditions"}</Text>
-            <Text>{ entry.weather? entry.weather.weather[0].description: "Unknown Weather Conditions"}</Text>
-            <Text>{ entry.notes}</Text>
+            <Text>{ entry.weather? entry.weather.main.temp +  " Degrees Fahrenheit": "Unknown Temperature Conditions"}</Text>
+            <Text>{ entry.weather? "Weather conditions: " + entry.weather.weather[0].description: "Unknown Weather Conditions"}</Text>
+            <Text>{"Notes: " +  entry.notes}</Text>
 
-
-            <Text>{}</Text>
 
             
             <View>
@@ -71,12 +69,31 @@ import {
   const styles = StyleSheet.create({
       container:{
         flex: 1,
+        backgroundColor: '#00cc99',
+
       },
     userImage: {
         flex: 1,
     },
     textContainer: {
         flex: 2,
+    },
+    title: {
+      alignSelf: "center",
+      fontWeight: "bold",
+    },
+    name: {
+      alignSelf: "center",
+      fontWeight: "bold",
+    },
+    date: {
+
+    },
+    weather: {
+
+    },
+    notes: {
+
     },
 
 });

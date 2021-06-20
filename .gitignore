@@ -7,6 +7,7 @@ npm-debug.*
 *.key
 weatherKey.js
 fb-config.js
+facebookAppId.js
 *.mobileprovision
 *.orig.*
 web-build/

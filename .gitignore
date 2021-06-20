@@ -5,9 +5,11 @@ npm-debug.*
 *.p8
 *.p12
 *.key
+weatherKey.js
+fb-config.js
 *.mobileprovision
 *.orig.*
 web-build/
-
+fb-config.js
 # macOS
 .DS_Store

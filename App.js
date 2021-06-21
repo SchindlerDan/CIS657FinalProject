@@ -8,19 +8,45 @@ import Main from './screens/Main';
 import Login from './screens/Login';
 import Read from './screens/Read';
 import Write from './screens/Write';
-import Settings from './screens/Settings';
 import ReadList from './screens/ReadList';
+import * as Analytics from 'expo-firebase-analytics';
 
 
-const Stack= createStackNavigator();
-
-
+// Gets the current screen from navigation state
+const getActiveRouteName = state => {
+  const route = state.routes[state.index];
+  if (route.state) {
+    // Dive into nested navigators
+    return getActiveRouteName(route.state);
+  }
+  return route.name;
+};
 
 export default function App() {
-  
+
+  const routeNameRef = React.useRef();
+  const navigationRef = React.useRef();
+
+  React.useEffect(() => {
+    const state = navigationRef.current.getRootState();
+
+    // Save the initial route name
+    routeNameRef.current = getActiveRouteName(state);
+  }, []);
+
+  const Stack = createStackNavigator();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer
+    ref={navigationRef}
+    onStateChange={(state) => {
+      const previousRouteName = routeNameRef.current;
+      const currentRouteName = getActiveRouteName(state);
+      if (previousRouteName !== currentRouteName) {
+        Analytics.setCurrentScreen(currentRouteName, currentRouteName);
+      }
+    }}
+    >
       <Stack.Navigator>
       <Stack.Screen name="Login" component={Login}/>
       <Stack.Screen name="Main" component={Main}/>

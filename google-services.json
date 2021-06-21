@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "64187532322",
+    "firebase_url": "https://exerjournal-default-rtdb.firebaseio.com",
+    "project_id": "exerjournal",
+    "storage_bucket": "exerjournal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64187532322:android:4505e8ac6f0bdc0dadf67b",
+        "android_client_info": {
+          "package_name": "Exer.Journal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64187532322-h13mdnrrrnma6v8s01s43e0fe2ns7sad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ0XmV5Sz_9t2SzBtu-Up51x_a4QIRLYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64187532322-h13mdnrrrnma6v8s01s43e0fe2ns7sad.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "64187532322-dflg89949t5a86jq99plggo9p8r9mf2h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ExerJournal"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

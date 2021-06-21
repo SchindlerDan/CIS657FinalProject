@@ -21,6 +21,7 @@ const getActiveRouteName = state => {
   }
   return route.name;
 };
+const Stack = createStackNavigator();
 
 export default function App() {
 
@@ -34,7 +35,6 @@ export default function App() {
     routeNameRef.current = getActiveRouteName(state);
   }, []);
 
-  const Stack = createStackNavigator();
 
   return (
     <NavigationContainer
@@ -47,7 +47,7 @@ export default function App() {
       }
     }}
     >
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={navStyling}>
       <Stack.Screen name="Login" component={Login}/>
       <Stack.Screen name="Main" component={Main}/>
       <Stack.Screen name="Read" component={Read}/>
@@ -57,6 +57,19 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+
+const navStyling = {
+  headerStyle: {
+    backgroundColor: '#0065A4',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+};
+
 
 const styles = StyleSheet.create({
   container: {

@@ -8,20 +8,18 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   
-  View,
+  View
 } from "react-native";
 import { setupHistoryListener, initHistoryDB, storeHistoryItem } from '../apis/fb-helpers';
 
 import Read from './Read';
 import Write from './Write';
-import { appID } from "../apis/facebookAppId";
 
 
 
 
 const Main = ({ route, navigation }) => {
   const [entries, setEntries] = useState([]);
-  const [fbCredentials, setFBCredentials] = useState({});
 
 
 
@@ -37,12 +35,7 @@ const Main = ({ route, navigation }) => {
       setEntries(items);
     });
     console.log('set up history');
-    setFBCredentials(route.params.response);
 
-    FB.init({
-      appId: appID,
-      version: "v11.0",
-    });
   }, []);
 
 
@@ -63,7 +56,7 @@ const Main = ({ route, navigation }) => {
 
         <TouchableOpacity
         style={styles.writer}
-          onPress={() => navigation.navigate("Write", { entries: entries, fb: fbCredentials })}
+          onPress={() => navigation.navigate("Write", { entries: entries})}
         >
           <Text style={styles.text} >Write Entry</Text>
         </TouchableOpacity>

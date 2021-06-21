@@ -34,10 +34,9 @@ const Write = ({ route, navigation }) => {
   const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
   const entries = route.params.entries;
-  const fbCredentials = route.params.fb;
 
   const [entry, setEntry] = useState({
-    name: fbCredentials.name,
+    name: '',
     date: date,
     title: '',
     zipcode: 0,
@@ -212,6 +211,25 @@ const Write = ({ route, navigation }) => {
       />
 
 
+
+
+
+
+
+
+<Text style={styles.text}>Name:</Text>
+
+
+<Input
+  style={styles.input}
+  placeholder=""
+  ref={initialField}
+  value={entry.name}
+  autoCorrect={false}
+  onChangeText={(val) => updateStateObject({ name: val })}
+/>
+
+
       <Text style={styles.text}>Zipcode:</Text>
       <Input
         placeholder={entries[0] ? entries[0].zipcode : "5 digit zipcode"}
@@ -247,7 +265,7 @@ const Write = ({ route, navigation }) => {
           <TouchableOpacity
             onPress={saveEntry}
           >
-            <Text>
+            <Text style={{fontWeight: "bold",}}>
               Save (Requires photo)
             </Text>
           </TouchableOpacity>

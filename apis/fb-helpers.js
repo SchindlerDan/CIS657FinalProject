@@ -12,10 +12,6 @@ export function initHistoryDB() {
 }
 
 export function storeHistoryItem(item) {
-  
-  
-
-
   firebase.database().ref(`historyData/`).push(item);
 }
 

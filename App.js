@@ -5,7 +5,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import Main from './screens/Main';
-import Login from './screens/Login';
 import Read from './screens/Read';
 import Write from './screens/Write';
 import ReadList from './screens/ReadList';
@@ -48,7 +47,6 @@ export default function App() {
     }}
     >
       <Stack.Navigator screenOptions={navStyling}>
-      <Stack.Screen name="Login" component={Login}/>
       <Stack.Screen name="Main" component={Main}/>
       <Stack.Screen name="Read" component={Read}/>
       <Stack.Screen name="Entries" component={ReadList}/>
